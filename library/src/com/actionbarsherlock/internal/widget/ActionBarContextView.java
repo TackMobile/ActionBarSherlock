@@ -15,6 +15,7 @@
  */
 package com.actionbarsherlock.internal.widget;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
@@ -43,6 +44,7 @@ import com.actionbarsherlock.view.ActionMode;
 /**
  * @hide
  */
+@SuppressLint("NewApi")
 public class ActionBarContextView extends AbsActionBarView implements AnimatorListener {
     //UNUSED private static final String TAG = "ActionBarContextView";
 
@@ -74,6 +76,7 @@ public class ActionBarContextView extends AbsActionBarView implements AnimatorLi
         this(context, attrs, R.attr.actionModeStyle);
     }
 
+    @SuppressWarnings("deprecation")
     public ActionBarContextView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
 
@@ -103,6 +106,7 @@ public class ActionBarContextView extends AbsActionBarView implements AnimatorLi
         }
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public void setSplitActionBar(boolean split) {
         if (mSplitActionBar != split) {
@@ -200,6 +204,7 @@ public class ActionBarContextView extends AbsActionBarView implements AnimatorLi
         }
     }
 
+    @SuppressWarnings("deprecation")
     public void initForMode(final ActionMode mode) {
         if (mClose == null) {
             LayoutInflater inflater = LayoutInflater.from(mContext);

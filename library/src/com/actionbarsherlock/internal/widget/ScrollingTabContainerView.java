@@ -15,6 +15,7 @@
  */
 package com.actionbarsherlock.internal.widget;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
@@ -42,6 +43,7 @@ import com.actionbarsherlock.internal.nineoldandroids.widget.NineHorizontalScrol
  * This widget implements the dynamic action bar tab behavior that can change
  * across different configurations or circumstances.
  */
+@SuppressLint("NewApi")
 public class ScrollingTabContainerView extends NineHorizontalScrollView
         implements IcsAdapterView.OnItemSelectedListener {
     //UNUSED private static final String TAG = "ScrollingTabContainerView";
@@ -271,6 +273,7 @@ public class ScrollingTabContainerView extends NineHorizontalScrollView
         }
     }
 
+    @SuppressWarnings("deprecation")
     private TabView createTabView(ActionBar.Tab tab, boolean forAdapter) {
         //Workaround for not being able to pass a defStyle on pre-3.0
         final TabView tabView = (TabView)mInflater.inflate(R.layout.abs__action_bar_tab, null);

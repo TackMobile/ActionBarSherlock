@@ -22,6 +22,7 @@ import com.actionbarsherlock.internal.widget.IcsLinearLayout;
 import com.actionbarsherlock.internal.widget.IcsListPopupWindow;
 import com.actionbarsherlock.view.ActionProvider;
 import com.actionbarsherlock.widget.ActivityChooserModel.ActivityChooserModelClient;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -66,6 +67,7 @@ import android.widget.TextView;
  *
  * @hide
  */
+@SuppressLint("NewApi")
 class ActivityChooserView extends ViewGroup implements ActivityChooserModelClient {
 
     /**
@@ -370,6 +372,7 @@ class ActivityChooserView extends ViewGroup implements ActivityChooserModelClien
      *
      * @return True if dismissed, false if already dismissed.
      */
+    @SuppressWarnings("deprecation")
     public boolean dismissPopup() {
         if (isShowingPopup()) {
             getListPopupWindow().dismiss();
@@ -400,6 +403,7 @@ class ActivityChooserView extends ViewGroup implements ActivityChooserModelClien
         mIsAttachedToWindow = true;
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
@@ -501,6 +505,7 @@ class ActivityChooserView extends ViewGroup implements ActivityChooserModelClien
     /**
      * Updates the buttons state.
      */
+    @SuppressWarnings("deprecation")
     private void updateAppearance() {
         // Expand overflow button.
         if (mAdapter.getCount() > 0) {

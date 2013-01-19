@@ -16,6 +16,7 @@
 
 package com.actionbarsherlock.widget;
 
+import android.annotation.SuppressLint;
 import android.app.SearchManager;
 import android.app.SearchableInfo;
 import android.content.ComponentName;
@@ -55,6 +56,7 @@ import java.util.WeakHashMap;
  *
  * @hide
  */
+@SuppressLint("NewApi")
 class SuggestionsAdapter extends ResourceCursorAdapter implements OnClickListener {
 
     private static final boolean DBG = false;
@@ -65,6 +67,7 @@ class SuggestionsAdapter extends ResourceCursorAdapter implements OnClickListene
     static final int REFINE_BY_ENTRY = 1;
     static final int REFINE_ALL = 2;
 
+    @SuppressWarnings("unused")
     private SearchManager mSearchManager;
     private SearchView mSearchView;
     private Context mProviderContext;
@@ -660,6 +663,7 @@ class SuggestionsAdapter extends ResourceCursorAdapter implements OnClickListene
      * @return A drawable, or {@code null} if neither the activity nor the application
      *         has an icon set.
      */
+    @SuppressWarnings("unused")
     private Drawable getActivityIconWithCache(ComponentName component) {
         // First check the icon cache
         String componentIconKey = component.flattenToShortString();
